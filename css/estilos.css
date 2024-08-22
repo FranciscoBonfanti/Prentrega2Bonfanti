@@ -19,8 +19,16 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #333;
+    background-color: #000000;
 }
+
+.navbar-logo {
+    box-shadow: 4px 4px 12px rgba(214, 197, 131, 0.726);
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 40px;
+}
+
 
 .navbar-logo img {
     width: 120px;
@@ -80,12 +88,48 @@ body {
 .boton_sesion {
     padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: 0.3s;
+    border: 1px solid #d6c583;
+    box-shadow: 4px 4px 12px rgba(214, 197, 131, 0.726);
 }
 
 .boton_sesion:hover {
-    background-color: #555;
+    background-color: #d6c583ad;
 }
+
+
+.container_under--sidebar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid #d6c583;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.under--sidebar {
+    padding: 20px;
+    border-left: 1.5px solid #d6c583;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 4px 4px 12px rgba(214, 197, 131, 0.726);
+    background-color: transparent;
+    border: none;
+    transition: 0.3s;
+}
+
+.under--sidebar:hover{
+    background-color: #d6c583ad;
+}
+
+.a--sidebar {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    margin: 10px;
+}
+
+
+
 
 /*CAROUSEL*/
 .carousel-small {
@@ -164,3 +208,36 @@ main {
     border: 1px solid #d6c583;
 }
 
+.boton-lista:hover{
+    background-color: #d6c583ad;
+}
+
+
+
+/*PERFIL*/
+.perfil-datos {
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 4px 4px 12px rgba(214, 197, 131, 0.726);
+    color: #ecf0f1;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #d6c583;
+}
+
+.perfil-datos p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.perfil-datos strong {
+    font-weight: bold;
+    color: #d6c583;
+}
+
+.perfil-datos span {
+    color: #ecf0f1;
+}

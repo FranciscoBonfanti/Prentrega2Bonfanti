@@ -24,7 +24,6 @@
             <input type="checkbox" id="menu" class="menu">
             <label for="menu" class="icono">&#9776;</label>
             <div class="navbar-links">
-                <a class="boton_sesion info-link" href="./index.html">Inicio</a>
                 <a class="boton_sesion" href="./pages/inicioSesion.html">Iniciar Sesión</a>
                 <a class="boton_sesion" href="./pages/registrate.html">Regístrate</a>
             </div>
@@ -34,6 +33,17 @@
 
     <!-- INICIO MAIN -->
     <main>
+
+        <!-- SECTION BAJO EL NAVBAR -->
+        <div class="container_under--sidebar">
+            <button class="under--sidebar"><a class="a--sidebar" href="../index.html">Inicio</a></button>
+            <button class="under--sidebar"><a class="a--sidebar" href="">Venta entradas</a></button>
+            <button class="under--sidebar"><a class="a--sidebar" href="">Carrito</a></button>
+            <button class="under--sidebar"><a class="a--sidebar" href="">Eventos</a></button>
+            <button class="under--sidebar"><a class="a--sidebar" href="./pages/perfil.html">Perfil</a></button>
+        </div>
+        <!-- FIN SECTION BAJO EL NAVBAR -->
+
         <!-- INICIO CAROUSEL -->
         <div id="carouselExampleControls" class="carousel slide carousel-small" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -65,17 +75,22 @@
         <!-- FILTROS TARJETAS -->
         <div class="contenedor-filtros">
             <label for="filtroBanda">Filtrar por Banda:</label>
-        <input type="text" id="filtroBanda" placeholder="Ingrese nombre de la banda">
-        <label for="filtroFecha">Filtrar por Fecha:</label>
-        <input type="date" id="filtroFecha">
-        <button class="boton-lista" onclick="filtrarConciertos()">Filtrar</button>
-        <button class="boton-lista" onclick="limpiarFiltros()">Limpiar Filtros</button>
+            <input type="text" id="filtroBanda" placeholder="Ingrese nombre de la banda">
+            <label for="filtroFecha">Filtrar por Fecha:</label>
+            <input type="date" id="filtroFecha">
+            <button class="boton-lista" onclick="filtrarConciertos()">Filtrar</button>
+            <button class="boton-lista" onclick="limpiarFiltros()">Limpiar Filtros</button>
         </div>
+
+        <!-- CONTENEDOR PRINCIPAL PARA DIVS -->
+        <div id="mainContainer"></div>
+
         <!-- CONTENEDOR TARJETAS -->
         <div id="contenedorTarjetas"></div>
-
     </main>
     <!-- FIN MAIN -->
+
+    <footer id="footer"></footer>
 
     <!-- script javascript -->
     <script src="./js/main.js"></script>
