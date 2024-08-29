@@ -46,25 +46,34 @@ conciertos.forEach(concierto => {
     botonAgregar.classList.add('boton-agregar');
     tarjeta.appendChild(botonAgregar);
 
+    // Elemento para mostrar el mensaje
+    const mensaje = document.createElement('p');
+    mensaje.classList.add('mensaje');
+    mensaje.style.color = 'green'; // Puedes ajustar el estilo del mensaje
+    mensaje.style.display = 'none'; // Inicialmente oculto
+    tarjeta.appendChild(mensaje);
+
     contenedorEventos.appendChild(tarjeta);
 
     // Añadir evento para agregar al carrito
     botonAgregar.addEventListener('click', () => {
-        agregarAlCarrito(concierto);
+        agregarAlCarrito(concierto, mensaje);
     });
 });
 
 // Función para agregar concierto al carrito
-function agregarAlCarrito(concierto) {
+function agregarAlCarrito(concierto, mensajeElement) {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     carrito.push(concierto);
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    alert(`${concierto.banda} agregado al carrito.`);
+
+    // Mostrar mensaje debajo del botón
+    mensajeElement.textContent = `${concierto.banda} agregado al carrito.`;
+    mensajeElement.style.display = 'block';
 }
 
-// crear el footer
+// Crear el footer
 function footer() {
-
     const footer = document.getElementById('footer');
 
     const parrafoFooter = document.createElement('p');

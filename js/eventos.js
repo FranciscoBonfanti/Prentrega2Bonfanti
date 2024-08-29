@@ -1,6 +1,5 @@
-// crear el footer
-function footer() {
-
+// Función para crear el footer
+function crearFooter() {
     const footer = document.getElementById('footer');
 
     const parrafoFooter = document.createElement('p');
@@ -19,6 +18,7 @@ function footer() {
     parrafoFooter.style.fontSize = '1.1rem';
     parrafoFooter.style.color = 'white';
     parrafoFooter.style.borderBlockStart = '0.5px solid white';
+    footer.style.position = 'fixed';
     footer.style.bottom = '0';
     footer.style.width = '100%';
     footer.style.height = '60px';
@@ -27,4 +27,7 @@ function footer() {
     footer.appendChild(parrafoFooter);
 }
 
-window.onload = footer;
+// Llama a ambas funciones cuando la página haya cargado
+window.onload = function() {
+    crearFooter();
+};

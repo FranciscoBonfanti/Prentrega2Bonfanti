@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     const contenedorCarrito = document.getElementById("contenedor-carrito");
     const btnRealizarCompra = document.getElementById("btn-realizar-compra");
+    const mensajeCompra = document.getElementById("mensaje-compra"); // Contenedor del mensaje de compra
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     if (carrito.length === 0) {
-        contenedorCarrito.innerHTML = "<p>No hay eventos en el carrito.</p>";
+        contenedorCarrito.innerHTML = "<h2>No hay eventos en el carrito.</h2>";
         btnRealizarCompra.style.display = "none";
         return;
     }
@@ -38,13 +39,19 @@ function eliminarDelCarrito(index) {
 
 function realizarCompra() {
     localStorage.removeItem("carrito");
-    alert("Compra realizada con éxito.");
-    location.reload(); 
+
+    // Mostrar mensaje de compra exitosa
+    const mensajeCompra = document.getElementById("mensaje-compra");
+    mensajeCompra.textContent = "Compra realizada con éxito.";
+    mensajeCompra.style.display = "block";
+
+    // Ocultar carrito y botón de compra
+    document.getElementById("contenedor-carrito").style.display = "none";
+    document.getElementById("btn-realizar-compra").style.display = "none";
 }
 
-// crear el footer
-function footer() {
-
+// Función para crear el footer
+function crearFooter() {
     const footer = document.getElementById('footer');
 
     const parrafoFooter = document.createElement('p');
@@ -63,6 +70,7 @@ function footer() {
     parrafoFooter.style.fontSize = '1.1rem';
     parrafoFooter.style.color = 'white';
     parrafoFooter.style.borderBlockStart = '0.5px solid white';
+    footer.style.position = 'fixed';
     footer.style.bottom = '0';
     footer.style.width = '100%';
     footer.style.height = '60px';
@@ -71,4 +79,7 @@ function footer() {
     footer.appendChild(parrafoFooter);
 }
 
-window.onload = footer;
+// Llama a ambas funciones cuando la página haya cargado
+window.onload = function() {
+    crearFooter();
+};

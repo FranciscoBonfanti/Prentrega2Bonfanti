@@ -4,18 +4,18 @@ function crearYcargarDatosPerfil() {
     const perfilDatosDiv = document.createElement('div');
     perfilDatosDiv.className = 'perfil-datos';
 
-    // Crear y añadir los elementos de nombre, email y teléfono
+    // Crear y añadir los elementos de nombre, apellido y email
     const nombreP = document.createElement('p');
     nombreP.innerHTML = '<strong>Nombre:</strong> <span id="nombrePerfil"></span>';
     perfilDatosDiv.appendChild(nombreP);
 
+    const apellidoP = document.createElement('p'); // Cambiado de `apellido` a `apellidoP`
+    apellidoP.innerHTML = '<strong>Apellido:</strong> <span id="apellidoPerfil"></span>'; // ID corregido
+    perfilDatosDiv.appendChild(apellidoP);
+
     const emailP = document.createElement('p');
     emailP.innerHTML = '<strong>Email:</strong> <span id="emailPerfil"></span>';
     perfilDatosDiv.appendChild(emailP);
-
-    const telefonoP = document.createElement('p');
-    telefonoP.innerHTML = '<strong>Teléfono:</strong> <span id="telefonoPerfil"></span>';
-    perfilDatosDiv.appendChild(telefonoP);
 
     // Insertar el contenedor en el DOM
     document.querySelector('main').appendChild(perfilDatosDiv);
@@ -27,12 +27,12 @@ function crearYcargarDatosPerfil() {
 // Función para cargar los datos registrados desde el localStorage
 function cargarDatosPerfil() {
     const nombre = localStorage.getItem('nombre') || 'Nombre no disponible';
+    const apellido = localStorage.getItem('apellido') || 'Apellido no disponible';
     const email = localStorage.getItem('email') || 'Email no disponible';
-    const telefono = localStorage.getItem('telefono') || 'Teléfono no disponible';
 
     document.getElementById('nombrePerfil').textContent = nombre;
+    document.getElementById('apellidoPerfil').textContent = apellido; // ID corregido
     document.getElementById('emailPerfil').textContent = email;
-    document.getElementById('telefonoPerfil').textContent = telefono;
 }
 
 // Función para crear el footer
