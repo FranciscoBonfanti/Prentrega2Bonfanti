@@ -1,13 +1,15 @@
 <table>
   <tr>
     <td align="center">
-      <h1><u>Preentrega 1 CODERHOUSE</u></h1>
+      <h1><u>Preentrega 3 CODERHOUSE</u></h1>
     </td>
   </tr>
 </table>
 <hr>
 <h2>En éste proyecto realizaré una aplicación web donde se pueda <br>
-  realizar la compra de entradas, visualizar los eventos disponebles, comprar <br>
-  productos de tus bandas favoritas y mucho más</h2>
+  realizar la compra de entradas, visualizar eventos disponibles, crear un usuario, ver tu perfil y más</h2>
   <hr>
-<p>La preentrega 2 del proyecto consistirá en identificar el flujo de trabajo del script en términos de captura de entradas ingresadas por el usuario, procesamiento esencial del simulador y notificación de resultados en forma de salida.</u></p>
+<p>La preentrega 3 del proyecto consistirá en:
+*Definir eventos a manejar y su función de respuesta.
+*Modificar el DOM, ya sea para definir elementos al cargar la página o para realizar salidas de un procesamiento.
+*Almacenar datos (clave-valor) en el Storage y recuperarlos</u></p>
