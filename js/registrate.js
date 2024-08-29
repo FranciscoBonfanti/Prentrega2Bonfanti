@@ -5,6 +5,17 @@ let formContainer = document.querySelector('#formContainer');
 let form = document.createElement('form');
 form.id = 'registerForm';
 
+// Estilos para el formulario
+form.style.display = 'flex';
+form.style.flexDirection = 'column';
+form.style.width = '350px';
+form.style.margin = '0 auto';
+form.style.marginBottom = '20px'; // Corrección del typo: marginButtom => marginBottom
+form.style.padding = '20px';
+form.style.border = '1px solid #d6c583';
+form.style.borderRadius = '8px';
+form.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
+
 // Crear y agregar los campos de entrada al formulario
 let inputs = [
     { label: 'Nombre:', type: 'text', id: 'nombre' },
@@ -18,11 +29,20 @@ inputs.forEach(inputData => {
     let label = document.createElement('label');
     label.setAttribute('for', inputData.id);
     label.textContent = inputData.label;
+    label.style.marginBottom = '5px';
+    label.style.fontSize = '1rem';
+    label.style.color = '#d6c583';
 
     let input = document.createElement('input');
     input.type = inputData.type;
     input.id = inputData.id;
     input.required = true;
+    input.autocomplete = inputData.autocomplete;
+    input.style.padding = '10px';
+    input.style.marginBottom = '15px';
+    input.style.border = '1px solid #ccc';
+    input.style.borderRadius = '4px';
+    input.style.fontSize = '1rem';
 
     form.appendChild(label);
     form.appendChild(input);
@@ -32,6 +52,15 @@ inputs.forEach(inputData => {
 let submitButton = document.createElement('button');
 submitButton.type = 'submit';
 submitButton.textContent = 'Registrarse';
+submitButton.style.padding = '10px';
+submitButton.style.border = 'none';
+submitButton.style.borderRadius = '4px';
+submitButton.style.backgroundColor = '#d6c583';
+submitButton.style.color = 'white';
+submitButton.style.fontSize = '1rem';
+submitButton.style.cursor = 'pointer';
+submitButton.style.marginTop = '10px';
+
 form.appendChild(submitButton);
 
 // Agregar el formulario al contenedor
@@ -70,10 +99,8 @@ form.addEventListener("input", () => {
     }
 });
 
-
-// crear el footer
+// Crear el footer
 function footer() {
-
     const footer = document.getElementById('footer');
 
     const parrafoFooter = document.createElement('p');
@@ -97,7 +124,7 @@ function footer() {
     footer.style.width = '100%';
     footer.style.height = '60px';
 
-    // Agrega el párrafo al footer
+    // Agregar el párrafo al footer
     footer.appendChild(parrafoFooter);
 }
 

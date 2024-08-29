@@ -3,23 +3,23 @@ const conciertos = [
     { banda: "Municipal Waste", fecha: "2024-09-15", precio: 121000 },
     { banda: "Metallica", fecha: "2024-09-15", precio: 126000 },
     { banda: "The Police", fecha: "2024-10-05", precio: 183000 },
-    { banda: "Red Hot Chili Peppers", fecha: "2024-10-12", precio: 140000 },
-    { banda: "The Rolling Stones", fecha: "2024-10-20", precio: 225000 },
+    { banda: "Nirvana", fecha: "2024-10-12", precio: 140000 },
+    { banda: "Rammstein", fecha: "2024-10-20", precio: 225000 },
     { banda: "Municipal Waste", fecha: "2024-11-01", precio: 130000 },
     { banda: "Metallica", fecha: "2024-11-10", precio: 140000 },
     { banda: "The Police", fecha: "2024-11-15", precio: 190000 },
-    { banda: "Red Hot Chili Peppers", fecha: "2024-11-20", precio: 150000 },
-    { banda: "The Rolling Stones", fecha: "2024-11-25", precio: 230000 },
+    { banda: "Nirvana", fecha: "2024-11-20", precio: 150000 },
+    { banda: "Rammstein", fecha: "2024-11-25", precio: 230000 },
     { banda: "Municipal Waste", fecha: "2024-12-01", precio: 135000 },
     { banda: "Metallica", fecha: "2024-12-05", precio: 145000 },
     { banda: "The Police", fecha: "2024-12-10", precio: 195000 },
-    { banda: "Red Hot Chili Peppers", fecha: "2024-12-15", precio: 155000 },
-    { banda: "The Rolling Stones", fecha: "2024-12-20", precio: 235000 },
+    { banda: "Nirvana", fecha: "2024-12-15", precio: 155000 },
+    { banda: "Rammstein", fecha: "2024-12-20", precio: 235000 },
     { banda: "Municipal Waste", fecha: "2025-01-05", precio: 140000 },
     { banda: "Metallica", fecha: "2025-01-10", precio: 150000 },
     { banda: "The Police", fecha: "2025-01-15", precio: 200000 },
-    { banda: "Red Hot Chili Peppers", fecha: "2025-01-20", precio: 160000 },
-    { banda: "The Rolling Stones", fecha: "2025-01-25", precio: 240000 }
+    { banda: "Nirvana", fecha: "2025-01-20", precio: 160000 },
+    { banda: "Rammstein", fecha: "2025-01-25", precio: 240000 }
 ];
 
 // Función para crear tarjetas de conciertos
@@ -71,11 +71,82 @@ function limpiarFiltros() {
     tarjetas(conciertos);
 }
 
-tarjetas(conciertos);
+// Función para crear el carousel
+function crearCarousel() {
+    const carouselContainer = document.getElementById('carouselContainer');
+    if (!carouselContainer) return;
 
-// crear el footer
+    // Array de imágenes para el carousel
+    const imagenes = [
+        { src: "./img/img-guns.jpg", alt: "Guns N' Roses" },
+        { src: "./img/image.png", alt: "Imagen 2" },
+        { src: "./img/img-rammstein.jpg", alt: "Rammstein" }
+    ];
+
+    // Crear elementos del carousel
+    const carousel = document.createElement('div');
+    carousel.className = 'carousel slide carousel-small';
+    carousel.setAttribute('data-bs-ride', 'carousel');
+
+    const innerCarousel = document.createElement('div');
+    innerCarousel.className = 'carousel-inner';
+
+    imagenes.forEach((imagen, index) => {
+        const item = document.createElement('div');
+        item.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+
+        const img = document.createElement('img');
+        img.className = 'd-block w-100';
+        img.src = imagen.src;
+        img.alt = imagen.alt;
+
+        item.appendChild(img);
+        innerCarousel.appendChild(item);
+    });
+
+    const controlPrev = document.createElement('a');
+    controlPrev.className = 'carousel-control-prev';
+    controlPrev.setAttribute('href', '#carouselExampleControls');
+    controlPrev.setAttribute('role', 'button');
+    controlPrev.setAttribute('data-bs-slide', 'prev');
+
+    const prevIcon = document.createElement('span');
+    prevIcon.className = 'carousel-control-prev-icon';
+    prevIcon.setAttribute('aria-hidden', 'true');
+
+    const prevText = document.createElement('span');
+    prevText.className = 'visually-hidden';
+    prevText.textContent = 'Previous';
+
+    controlPrev.appendChild(prevIcon);
+    controlPrev.appendChild(prevText);
+
+    const controlNext = document.createElement('a');
+    controlNext.className = 'carousel-control-next';
+    controlNext.setAttribute('href', '#carouselExampleControls');
+    controlNext.setAttribute('role', 'button');
+    controlNext.setAttribute('data-bs-slide', 'next');
+
+    const nextIcon = document.createElement('span');
+    nextIcon.className = 'carousel-control-next-icon';
+    nextIcon.setAttribute('aria-hidden', 'true');
+
+    const nextText = document.createElement('span');
+    nextText.className = 'visually-hidden';
+    nextText.textContent = 'Next';
+
+    controlNext.appendChild(nextIcon);
+    controlNext.appendChild(nextText);
+
+    carousel.appendChild(innerCarousel);
+    carousel.appendChild(controlPrev);
+    carousel.appendChild(controlNext);
+
+    carouselContainer.appendChild(carousel);
+}
+
+// Función para crear el footer
 function footer() {
-
     const footer = document.getElementById('footer');
 
     const parrafoFooter = document.createElement('p');
@@ -98,9 +169,12 @@ function footer() {
     footer.style.width = '100%';
     footer.style.height = '60px';
 
-    // Agrega el párrafo al footer
     footer.appendChild(parrafoFooter);
 }
 
-window.onload = footer;
-
+// Llamar a las funciones al cargar la página
+window.onload = () => {
+    footer(); 
+    crearCarousel(); 
+    tarjetas(conciertos);
+};

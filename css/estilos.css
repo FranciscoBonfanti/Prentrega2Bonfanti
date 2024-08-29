@@ -7,10 +7,9 @@
 }
 
 body {
-    background-color: black;
-    color: white;
+    background-color: #121212;
+    color: #e0e0e0;
     font-family: "Montserrat", sans-serif;
-    justify-content: center;
 }
 
 /* Estilos para el navbar */
@@ -22,13 +21,35 @@ body {
     background-color: #000000;
 }
 
+h1 {
+    font-size: 4rem; 
+    color: #d6c583;
+    text-align: center;
+    margin: 20px;
+    padding: 10px; 
+    border-bottom: 4px solid #d6c583; 
+    background: linear-gradient(135deg, #333333, #666666); 
+    color: #f0f0f0; 
+    border-radius: 8px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+
 .navbar-logo {
-    box-shadow: 4px 4px 12px rgba(214, 197, 131, 0.726);
+    box-shadow: 4px 4px 12px rgba(214, 197, 131, 0.6);
     display: inline-block;
     border-radius: 50%;
     margin-left: 40px;
 }
-
 
 .navbar-logo img {
     width: 120px;
@@ -55,6 +76,11 @@ body {
     color: white;
     text-decoration: none;
     font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: #d6c583;
 }
 
 /* Estilos Responsive */
@@ -90,19 +116,21 @@ body {
     border-radius: 5px;
     transition: 0.3s;
     border: 1px solid #d6c583;
-    box-shadow: 4px 4px 12px rgba(214, 197, 131, 0.726);
+    box-shadow: 4px 4px 12px rgba(214, 197, 131, 0.6);
+    background-color: #1e1e1e;
+    color: white;
 }
 
 .boton_sesion:hover {
     background-color: #d6c583ad;
 }
 
-
+/* Estilos de la barra lateral */
 .container_under--sidebar {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     border: 1px solid #d6c583;
-    margin-bottom: 15px;
+    margin: 20px;
     border-radius: 4px;
 }
 
@@ -111,13 +139,12 @@ body {
     border-left: 1.5px solid #d6c583;
     text-align: center;
     cursor: pointer;
-    box-shadow: 4px 4px 12px rgba(214, 197, 131, 0.726);
     background-color: transparent;
     border: none;
-    transition: 0.3s;
+    transition: background-color 0.3s;
 }
 
-.under--sidebar:hover{
+.under--sidebar:hover {
     background-color: #d6c583ad;
 }
 
@@ -128,98 +155,66 @@ body {
     margin: 10px;
 }
 
-
-
-
-/*CAROUSEL*/
-.carousel-small {
-    max-width: 800px;
-    margin: 0 auto; 
-}
-
-.carousel-small img {
-    width: 100%; 
-    height: auto;
-}
-
-
-h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #d6c583;
-    text-shadow: 2px 2px 4px rgb(134, 139, 55);
-}
-
-
-main {
-    padding: 20px;
-}
-
+/* Estilos para las tarjetas de eventos */
 .tarjeta {
     border: 1px solid #d6c583;
     border-radius: 8px;
     padding: 16px;
-    margin: 8px;
-    background-color: #1e1e1e;
-    color: white;
-    width: 250px;
+    margin: 16px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    width: 300px;
     text-align: center;
     display: inline-block;
-    transition: transform 0.3s;
+    box-shadow: 4px 4px 12px rgba(214, 197, 131, 0.6);
+    transition: transform 0.3s, background-color 0.3s;
 }
+
+#contenedorTarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+}
+
 
 .tarjeta:hover {
     transform: scale(1.05);
+    background-color: #333333;
 }
 
 .tarjeta h3 {
-    margin-top: 0;
-    font-size: 18px;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
 }
 
 .tarjeta p {
     margin: 8px 0;
+    font-size: 1.2rem;
 }
 
-#loginForm, #registerForm{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-/*contenedor filtros cartas*/
-
-.contenedor-filtros{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    gap: 10px;
-}
-
-.boton-lista{
-    background-color: #1e1e1e;
-    border-radius: 4px;
-    padding: 5px;
-    color: white;
+.boton-agregar {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
     border: 1px solid #d6c583;
+    background-color: #1e1e1e;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.boton-lista:hover{
+.boton-agregar:hover {
     background-color: #d6c583ad;
+    transform: scale(1.05);
 }
 
-
-
-/*PERFIL*/
+/* Estilos del perfil */
 .perfil-datos {
     border-radius: 8px;
     padding: 20px;
     margin: 20px 0;
-    box-shadow: 4px 4px 12px rgba(214, 197, 131, 0.726);
+    box-shadow: 4px 4px 12px rgba(214, 197, 131, 0.6);
     color: #ecf0f1;
     max-width: 500px;
     margin-left: auto;
@@ -240,4 +235,67 @@ main {
 
 .perfil-datos span {
     color: #ecf0f1;
+}
+
+/*==== filtros index ====*/
+/* Estilos para el contenedor de filtros */
+.contenedor-filtros {
+    background-color: #1e1e1e;
+    border: 1px solid #d6c583;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px; 
+    text-align: center;
+}
+
+/* Estilos para las etiquetas */
+.contenedor-filtros label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #d6c583;
+}
+
+/* Estilos para los inputs */
+.contenedor-filtros input[type="text"],
+.contenedor-filtros input[type="date"] {
+    width: calc(100% - 22px); 
+    padding: 10px;
+    border: 1px solid #d6c583;
+    border-radius: 5px;
+    background-color: #333333;
+    color: #e0e0e0;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Estilos para los botones */
+.boton-lista {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d6c583;
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 5px;
+    
+}
+
+/* Efecto hover para los botones */
+.boton-lista:hover {
+    background-color: #bfa562;
+    transform: scale(1.05);
+}
+
+#contenedor-carrito{
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-comprar{
+    display: flex;
+    justify-content: center;
 }
