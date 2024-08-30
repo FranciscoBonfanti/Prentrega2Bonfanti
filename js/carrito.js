@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const contenedorCarrito = document.getElementById("contenedor-carrito");
     const btnRealizarCompra = document.getElementById("btn-realizar-compra");
-    const mensajeCompra = document.getElementById("mensaje-compra"); // Contenedor del mensaje de compra
+    const mensajeCompra = document.getElementById("mensaje-compra"); 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     if (carrito.length === 0) {

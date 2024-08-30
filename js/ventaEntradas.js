@@ -49,8 +49,8 @@ conciertos.forEach(concierto => {
     // Elemento para mostrar el mensaje
     const mensaje = document.createElement('p');
     mensaje.classList.add('mensaje');
-    mensaje.style.color = 'green'; // Puedes ajustar el estilo del mensaje
-    mensaje.style.display = 'none'; // Inicialmente oculto
+    mensaje.style.color = 'green'; 
+    mensaje.style.display = 'none'; 
     tarjeta.appendChild(mensaje);
 
     contenedorEventos.appendChild(tarjeta);
@@ -67,7 +67,6 @@ function agregarAlCarrito(concierto, mensajeElement) {
     carrito.push(concierto);
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
-    // Mostrar mensaje debajo del botón
     mensajeElement.textContent = `${concierto.banda} agregado al carrito.`;
     mensajeElement.style.display = 'block';
 }
@@ -96,7 +95,6 @@ function footer() {
     footer.style.width = '100%';
     footer.style.height = '60px';
 
-    // Agrega el párrafo al footer
     footer.appendChild(parrafoFooter);
 }
 

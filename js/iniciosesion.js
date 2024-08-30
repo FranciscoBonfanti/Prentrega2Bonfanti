@@ -56,7 +56,7 @@ submitButton.style.cursor = 'pointer';
 
 form.appendChild(submitButton);
 
-// Agregar el formulario al contenedor
+
 loginContainer.appendChild(form);
 
 // Funcionalidad al formulario
@@ -103,7 +103,6 @@ function footer() {
     footer.style.width = '100%';
     footer.style.height = '60px';
 
-    // Agregar el párrafo al footer
     footer.appendChild(parrafoFooter);
 }
 

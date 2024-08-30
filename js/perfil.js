@@ -1,6 +1,6 @@
 // Función para crear y cargar los datos del perfil
 function crearYcargarDatosPerfil() {
-    // Crear el contenedor de perfil
+    
     const perfilDatosDiv = document.createElement('div');
     perfilDatosDiv.className = 'perfil-datos';
 
@@ -9,18 +9,18 @@ function crearYcargarDatosPerfil() {
     nombreP.innerHTML = '<strong>Nombre:</strong> <span id="nombrePerfil"></span>';
     perfilDatosDiv.appendChild(nombreP);
 
-    const apellidoP = document.createElement('p'); // Cambiado de `apellido` a `apellidoP`
-    apellidoP.innerHTML = '<strong>Apellido:</strong> <span id="apellidoPerfil"></span>'; // ID corregido
+    const apellidoP = document.createElement('p'); 
+    apellidoP.innerHTML = '<strong>Apellido:</strong> <span id="apellidoPerfil"></span>'; 
     perfilDatosDiv.appendChild(apellidoP);
 
     const emailP = document.createElement('p');
     emailP.innerHTML = '<strong>Email:</strong> <span id="emailPerfil"></span>';
     perfilDatosDiv.appendChild(emailP);
 
-    // Insertar el contenedor en el DOM
+    
     document.querySelector('main').appendChild(perfilDatosDiv);
 
-    // Cargar los datos del localStorage
+    
     cargarDatosPerfil();
 }
 
@@ -31,7 +31,7 @@ function cargarDatosPerfil() {
     const email = localStorage.getItem('email') || 'Email no disponible';
 
     document.getElementById('nombrePerfil').textContent = nombre;
-    document.getElementById('apellidoPerfil').textContent = apellido; // ID corregido
+    document.getElementById('apellidoPerfil').textContent = apellido;
     document.getElementById('emailPerfil').textContent = email;
 }
 
@@ -60,7 +60,7 @@ function crearFooter() {
     footer.style.width = '100%';
     footer.style.height = '60px';
 
-    // Agrega el párrafo al footer
+    
     footer.appendChild(parrafoFooter);
 }
 

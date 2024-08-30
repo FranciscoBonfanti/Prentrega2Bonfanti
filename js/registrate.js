@@ -10,7 +10,7 @@ form.style.display = 'flex';
 form.style.flexDirection = 'column';
 form.style.width = '350px';
 form.style.margin = '0 auto';
-form.style.marginBottom = '20px'; // Corrección del typo: marginButtom => marginBottom
+form.style.marginBottom = '20px';
 form.style.padding = '20px';
 form.style.border = '1px solid #d6c583';
 form.style.borderRadius = '8px';

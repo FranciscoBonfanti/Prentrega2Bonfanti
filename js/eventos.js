@@ -23,11 +23,11 @@ function crearFooter() {
     footer.style.width = '100%';
     footer.style.height = '60px';
 
-    // Agrega el párrafo al footer
+    
     footer.appendChild(parrafoFooter);
 }
 
-// Llama a ambas funciones cuando la página haya cargado
+
 window.onload = function() {
     crearFooter();
 };
