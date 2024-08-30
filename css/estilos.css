@@ -10,6 +10,9 @@ body {
     background-color: #121212;
     color: #e0e0e0;
     font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Estilos para el navbar */
@@ -293,9 +296,12 @@ h1 {
 #contenedor-carrito{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .contenedor-comprar{
     display: flex;
     justify-content: center;
 }
+

@@ -70,7 +70,6 @@ function crearFooter() {
     parrafoFooter.style.fontSize = '1.1rem';
     parrafoFooter.style.color = 'white';
     parrafoFooter.style.borderBlockStart = '0.5px solid white';
-    footer.style.position = 'fixed';
     footer.style.bottom = '0';
     footer.style.width = '100%';
     footer.style.height = '60px';
