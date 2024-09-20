@@ -9,7 +9,12 @@
 <h2>En éste proyecto realizaré una aplicación web donde se pueda <br>
   realizar la compra de entradas, visualizar eventos disponibles, crear un usuario, ver tu perfil y más</h2>
   <hr>
-<p>La preentrega 3 del proyecto consistirá en: <br>
-*Definir eventos a manejar y su función de respuesta.<br>
-*Modificar el DOM, ya sea para definir elementos al cargar la página o para realizar salidas de un procesamiento.<br>
-*Almacenar datos (clave-valor) en el Storage y recuperarlos</u></p>
+<p>La preentrega FINAL del proyecto consistirá en: <br>
+*Objetos y Arrays. Métodos de Arrays.<br>
+*Funciones y condicionales.<br>
+*Generación del DOM de forma dinámica. Eventos.<br>
+*Sintaxis avanzada.<br>
+*Al menos una librería de uso relevante para el proyecto.<br>
+*Manejo de promesas con fetch. <br>
+*Carga de datos desde un JSON local o desde una API externa.b<br>
+</p>
