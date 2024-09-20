@@ -40,17 +40,33 @@ function eliminarDelCarrito(index) {
 function realizarCompra() {
     localStorage.removeItem("carrito");
 
-    // Mostrar mensaje de compra exitosa
     const mensajeCompra = document.getElementById("mensaje-compra");
     mensajeCompra.textContent = "Compra realizada con éxito.";
     mensajeCompra.style.display = "block";
 
-    // Ocultar carrito y botón de compra
     document.getElementById("contenedor-carrito").style.display = "none";
     document.getElementById("btn-realizar-compra").style.display = "none";
+
+    crearSeccionNuevaCompra();
 }
 
-// Función para crear el footer
+function crearSeccionNuevaCompra() {
+    const seccionNuevaCompra = document.createElement('div');
+    seccionNuevaCompra.classList.add('seccion-nueva-compra');
+
+    seccionNuevaCompra.innerHTML = `
+        <h2>¿Quieres realizar otra compra?</h2>
+        <button id="btn-nueva-compra" onclick="nuevaCompra()">Realizar otra compra</button>`
+        ;
+
+    const contenedorCarrito = document.getElementById("contenedor-carrito").parentNode;
+    contenedorCarrito.appendChild(seccionNuevaCompra);
+}
+
+function nuevaCompra() {
+    location.reload();
+}
+
 function crearFooter() {
     const footer = document.getElementById('footer');
 
@@ -70,15 +86,14 @@ function crearFooter() {
     parrafoFooter.style.fontSize = '1.1rem';
     parrafoFooter.style.color = 'white';
     parrafoFooter.style.borderBlockStart = '0.5px solid white';
+    footer.style.position = 'fixed';
     footer.style.bottom = '0';
     footer.style.width = '100%';
     footer.style.height = '60px';
 
-    // Agrega el párrafo al footer
     footer.appendChild(parrafoFooter);
 }
 
-// Llama a ambas funciones cuando la página haya cargado
 window.onload = function() {
     crearFooter();
 };

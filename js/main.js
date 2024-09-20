@@ -22,7 +22,7 @@ const conciertos = [
     { banda: "Rammstein", fecha: "2025-01-25", precio: 240000 }
 ];
 
-// Función para crear tarjetas de conciertos
+// Tarjetas de conciertos
 function tarjetas(conciertos) {
     const contenedor = document.getElementById('contenedorTarjetas');
     if (contenedor) {
@@ -50,7 +50,7 @@ function tarjetas(conciertos) {
     }
 }
 
-// Función para filtrar conciertos
+// Filtrar conciertos
 function filtrarConciertos() {
     const filtroBanda = document.getElementById('filtroBanda').value.toLowerCase();
     const filtroFecha = document.getElementById('filtroFecha').value;
@@ -64,88 +64,13 @@ function filtrarConciertos() {
     tarjetas(conciertosFiltrados);
 }
 
-// Función para limpiar los filtros y mostrar todas las tarjetas
 function limpiarFiltros() {
     document.getElementById('filtroBanda').value = '';
     document.getElementById('filtroFecha').value = '';
     tarjetas(conciertos);
 }
 
-// Función para crear el carousel
-function crearCarousel() {
-    const carouselContainer = document.getElementById('carouselContainer');
-    if (!carouselContainer) return;
-
-    // Array de imágenes para el carousel
-    const imagenes = [
-        { src: "./img/img-guns.jpg", alt: "Guns N' Roses" },
-        { src: "./img/image.png", alt: "Imagen 2" },
-        { src: "./img/img-rammstein.jpg", alt: "Rammstein" }
-    ];
-
-    // Crear elementos del carousel
-    const carousel = document.createElement('div');
-    carousel.className = 'carousel slide carousel-small';
-    carousel.setAttribute('data-bs-ride', 'carousel');
-
-    const innerCarousel = document.createElement('div');
-    innerCarousel.className = 'carousel-inner';
-
-    imagenes.forEach((imagen, index) => {
-        const item = document.createElement('div');
-        item.className = `carousel-item ${index === 0 ? 'active' : ''}`;
-
-        const img = document.createElement('img');
-        img.className = 'd-block w-100';
-        img.src = imagen.src;
-        img.alt = imagen.alt;
-
-        item.appendChild(img);
-        innerCarousel.appendChild(item);
-    });
-
-    const controlPrev = document.createElement('a');
-    controlPrev.className = 'carousel-control-prev';
-    controlPrev.setAttribute('href', '#carouselExampleControls');
-    controlPrev.setAttribute('role', 'button');
-    controlPrev.setAttribute('data-bs-slide', 'prev');
-
-    const prevIcon = document.createElement('span');
-    prevIcon.className = 'carousel-control-prev-icon';
-    prevIcon.setAttribute('aria-hidden', 'true');
-
-    const prevText = document.createElement('span');
-    prevText.className = 'visually-hidden';
-    prevText.textContent = 'Previous';
-
-    controlPrev.appendChild(prevIcon);
-    controlPrev.appendChild(prevText);
-
-    const controlNext = document.createElement('a');
-    controlNext.className = 'carousel-control-next';
-    controlNext.setAttribute('href', '#carouselExampleControls');
-    controlNext.setAttribute('role', 'button');
-    controlNext.setAttribute('data-bs-slide', 'next');
-
-    const nextIcon = document.createElement('span');
-    nextIcon.className = 'carousel-control-next-icon';
-    nextIcon.setAttribute('aria-hidden', 'true');
-
-    const nextText = document.createElement('span');
-    nextText.className = 'visually-hidden';
-    nextText.textContent = 'Next';
-
-    controlNext.appendChild(nextIcon);
-    controlNext.appendChild(nextText);
-
-    carousel.appendChild(innerCarousel);
-    carousel.appendChild(controlPrev);
-    carousel.appendChild(controlNext);
-
-    carouselContainer.appendChild(carousel);
-}
-
-// Función para crear el footer
+// Footer
 function footer() {
     const footer = document.getElementById('footer');
 
@@ -172,9 +97,7 @@ function footer() {
     footer.appendChild(parrafoFooter);
 }
 
-// Llamar a las funciones al cargar la página
 window.onload = () => {
-    footer(); 
-    crearCarousel(); 
+    footer();
     tarjetas(conciertos);
 };

@@ -1,11 +1,11 @@
-// Seleccionar el contenedor donde se generará el formulario
+
 let formContainer = document.querySelector('#formContainer');
 
-// Crear el formulario
+// Formulario
 let form = document.createElement('form');
 form.id = 'registerForm';
 
-// Estilos para el formulario
+
 form.style.display = 'flex';
 form.style.flexDirection = 'column';
 form.style.width = '350px';
@@ -16,7 +16,7 @@ form.style.border = '1px solid #d6c583';
 form.style.borderRadius = '8px';
 form.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
 
-// Crear y agregar los campos de entrada al formulario
+
 let inputs = [
     { label: 'Nombre:', type: 'text', id: 'nombre' },
     { label: 'Apellido:', type: 'text', id: 'apellido' },
@@ -48,7 +48,7 @@ inputs.forEach(inputData => {
     form.appendChild(input);
 });
 
-// Crear y agregar el botón de envío
+// Botón de envío
 let submitButton = document.createElement('button');
 submitButton.type = 'submit';
 submitButton.textContent = 'Registrarse';
@@ -63,10 +63,10 @@ submitButton.style.marginTop = '10px';
 
 form.appendChild(submitButton);
 
-// Agregar el formulario al contenedor
+
 formContainer.appendChild(form);
 
-// Agregar funcionalidad al formulario
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -82,7 +82,7 @@ form.addEventListener("submit", (e) => {
     localStorage.setItem("email", email);
     localStorage.setItem("contrasenia", contrasenia);
 
-    // Mostrar un mensaje de bienvenida
+
     alert("¡En horabuena! Bienvenido " + nombre);
 
 });
@@ -99,7 +99,7 @@ form.addEventListener("input", () => {
     }
 });
 
-// Crear el footer
+// Footer
 function footer() {
     const footer = document.getElementById('footer');
 
@@ -124,7 +124,7 @@ function footer() {
     footer.style.width = '100%';
     footer.style.height = '60px';
 
-    // Agregar el párrafo al footer
+
     footer.appendChild(parrafoFooter);
 }
 

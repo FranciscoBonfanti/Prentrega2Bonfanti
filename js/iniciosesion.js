@@ -42,7 +42,6 @@ inputs.forEach(inputData => {
     form.appendChild(input);
 });
 
-// Botón de envío
 let submitButton = document.createElement('button');
 submitButton.type = 'submit';
 submitButton.textContent = 'Iniciar Sesión';
@@ -59,7 +58,7 @@ form.appendChild(submitButton);
 
 loginContainer.appendChild(form);
 
-// Funcionalidad al formulario
+// Formulario
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -78,7 +77,7 @@ form.addEventListener("submit", (e) => {
     }
 });
 
-// Crear el footer
+// Footer
 function footer() {
     const footer = document.getElementById('footer');
 

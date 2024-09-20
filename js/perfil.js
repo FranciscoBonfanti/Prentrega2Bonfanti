@@ -1,10 +1,10 @@
-// Función para crear y cargar los datos del perfil
+
 function crearYcargarDatosPerfil() {
     
     const perfilDatosDiv = document.createElement('div');
     perfilDatosDiv.className = 'perfil-datos';
 
-    // Crear y añadir los elementos de nombre, apellido y email
+
     const nombreP = document.createElement('p');
     nombreP.innerHTML = '<strong>Nombre:</strong> <span id="nombrePerfil"></span>';
     perfilDatosDiv.appendChild(nombreP);
@@ -24,7 +24,7 @@ function crearYcargarDatosPerfil() {
     cargarDatosPerfil();
 }
 
-// Función para cargar los datos registrados desde el localStorage
+// Cargar los datos registrados desde el localStorage
 function cargarDatosPerfil() {
     const nombre = localStorage.getItem('nombre') || 'Nombre no disponible';
     const apellido = localStorage.getItem('apellido') || 'Apellido no disponible';
@@ -35,7 +35,7 @@ function cargarDatosPerfil() {
     document.getElementById('emailPerfil').textContent = email;
 }
 
-// Función para crear el footer
+// Footer
 function crearFooter() {
     const footer = document.getElementById('footer');
 
@@ -64,7 +64,7 @@ function crearFooter() {
     footer.appendChild(parrafoFooter);
 }
 
-// Llama a ambas funciones cuando la página haya cargado
+
 window.onload = function() {
     crearYcargarDatosPerfil();
     crearFooter();
