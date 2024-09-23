@@ -22,6 +22,13 @@ const conciertos = [
     { banda: "Rammstein", fecha: "2025-01-25", precio: 240000 }
 ];
 
+//GALERIA SWIPER
+
+
+
+
+
+
 // Tarjetas de conciertos
 function tarjetas(conciertos) {
     const contenedor = document.getElementById('contenedorTarjetas');

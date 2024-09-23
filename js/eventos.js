@@ -14,11 +14,11 @@ function filtrarEventosDisponibles(eventos) {
 }
 
 function mostrarEventos(eventos) {
-    const contenedorEventos = document.getElementById('contenedorEventos'); 
+    const contenedorEventos = document.getElementById('contenedorEventos');
     contenedorEventos.style.display = 'flex';
     contenedorEventos.style.flexWrap = 'wrap';
     contenedorEventos.style.justifyContent = 'center';
-    contenedorEventos.style.gap = '16px'; 
+    contenedorEventos.style.gap = '16px';
 
     eventos.forEach((evento, index) => {
         const tarjeta = document.createElement('div');
@@ -45,10 +45,32 @@ function agregarAlCarrito(nombre, fecha, precio, index) {
 
     const botonAgregar = document.getElementById(`boton-agregar-${index}`);
     const mensajeAgregado = document.getElementById(`mensaje-agregado-${index}`);
-    
-    botonAgregar.style.display = 'none';  
-    mensajeAgregado.style.display = 'block';  
+
+    botonAgregar.style.display = 'none';
+    mensajeAgregado.style.display = 'block';
 }
+
+//SWIPER
+const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false, 
+    },
+});
+
+
+
 
 
 //Footer
@@ -76,10 +98,10 @@ function crearFooter() {
     footer.style.width = '100%';
     footer.style.height = '60px';
 
-    
+
     footer.appendChild(parrafoFooter);
 }
 
-window.onload = function() {
+window.onload = function () {
     crearFooter();
 };
