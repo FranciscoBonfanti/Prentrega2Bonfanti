@@ -29,4 +29,8 @@ Utilizar Javascript para mejorar la interacción y dinamismo de la página, gene
 </p>
 <p>
   * Utilizar asincronía y fetch para cargar datos estáticos o consumir una API.
+<<<<<<< HEAD
 </p>
+=======
+</p>
+>>>>>>> b4e47c68abe144303fadbd8850b1b6235984ba17
